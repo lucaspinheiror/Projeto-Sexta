@@ -1,0 +1,107 @@
+ORGANIZACAO DE PASTAS - BACKEND FASTAPI + SQLITE
+
+1) Objetivo da separacao
+- Isolar claramente o que e camada web (FastAPI) e o que e camada de persistencia (DB).
+- Facilitar manutencao e handoff para o time.
+- Permitir evolucao por responsabilidade sem acoplamento forte.
+
+2) Estrutura principal
+- app/fastapi
+  - controllers/: endpoints HTTP (entrada e saida da API).
+  - schemas/: contratos de request/response (validacao com Pydantic).
+  - router.py: composicao central das rotas.
+
+- app/services
+  - Regras de negocio e orquestracao dos casos de uso.
+  - Nao acessa HTTP diretamente e nao fala SQL diretamente.
+
+- app/db
+  - models/: entidades SQLAlchemy que representam tabelas.
+  - repositories/: acesso a dados (queries, insert, update, delete).
+  - session.py: engine/sessao e dependencia de banco.
+  - base.py: Base declarativa do SQLAlchemy.
+
+- app/core
+  - config.py: configuracoes da aplicacao (env vars).
+
+- app/main.py
+  - Inicializa FastAPI.
+  - Inicializa banco no startup.
+  - Inclui roteador da API.
+
+3) Fluxo padrao (controller -> service -> repository -> model)
+1. Controller recebe request HTTP.
+2. Controller valida dados com schema.
+3. Controller chama service.
+4. Service aplica regra de negocio.
+5. Service usa repository.
+6. Repository opera no banco usando model.
+7. Controller retorna resposta HTTP.
+
+4) Regras de organizacao para novos modulos
+- Sempre criar em pares por recurso:
+  - controller: app/fastapi/controllers/<recurso>_controller.py
+  - schema: app/fastapi/schemas/<recurso>_schema.py
+  - service: app/services/<recurso>_service.py
+  - model: app/db/models/<recurso>_model.py
+  - repository: app/db/repositories/<recurso>_repository.py
+- Evitar regra de negocio dentro de controller.
+- Evitar SQL/ORM direto dentro de service.
+
+5) Beneficios para handoff
+- Leitura rapida da responsabilidade de cada pasta.
+- Menor impacto de mudancas.
+- Melhor testabilidade por camada.ORGANIZACAO DE PASTAS - BACKEND FASTAPI + SQLITE
+
+1) Objetivo da separacao
+- Isolar claramente o que e camada web (FastAPI) e o que e camada de persistencia (DB).
+- Facilitar manutencao e handoff para o time.
+- Permitir evolucao por responsabilidade sem acoplamento forte.
+
+2) Estrutura principal
+- app/fastapi
+  - controllers/: endpoints HTTP (entrada e saida da API).
+  - schemas/: contratos de request/response (validacao com Pydantic).
+  - router.py: composicao central das rotas.
+
+- app/services
+  - Regras de negocio e orquestracao dos casos de uso.
+  - Nao acessa HTTP diretamente e nao fala SQL diretamente.
+
+- app/db
+  - models/: entidades SQLAlchemy que representam tabelas.
+  - repositories/: acesso a dados (queries, insert, update, delete).
+  - session.py: engine/sessao e dependencia de banco.
+  - base.py: Base declarativa do SQLAlchemy.
+
+- app/core
+  - config.py: configuracoes da aplicacao (env vars).
+
+- app/main.py
+  - Inicializa FastAPI.
+  - Inicializa banco no startup.
+  - Inclui roteador da API.
+
+3) Fluxo padrao (controller -> service -> repository -> model)
+1. Controller recebe request HTTP.
+2. Controller valida dados com schema.
+3. Controller chama service.
+4. Service aplica regra de negocio.
+5. Service usa repository.
+6. Repository opera no banco usando model.
+7. Controller retorna resposta HTTP.
+
+4) Regras de organizacao para novos modulos
+- Sempre criar em pares por recurso:
+  - controller: app/fastapi/controllers/<recurso>_controller.py
+  - schema: app/fastapi/schemas/<recurso>_schema.py
+  - service: app/services/<recurso>_service.py
+  - model: app/db/models/<recurso>_model.py
+  - repository: app/db/repositories/<recurso>_repository.py
+- Evitar regra de negocio dentro de controller.
+- Evitar SQL/ORM direto dentro de service.
+
+5) Beneficios para handoff
+- Leitura rapida da responsabilidade de cada pasta.
+- Menor impacto de mudancas.
+- Melhor testabilidade por camada.
