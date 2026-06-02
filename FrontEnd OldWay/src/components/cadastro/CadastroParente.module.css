@@ -1,0 +1,59 @@
+:root {
+    --azul-principal: #0a9396;
+}
+
+.container-formulario {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    /* border: 1px solid var(--azul-principal); */
+    padding: 1em;
+    border-radius: 1em;
+    width: 500px
+}
+
+.container-formulario h1 {
+    margin: auto;
+    margin-bottom: 1em;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 0.5em;
+    color: var(--azul-principal);
+    text-align: center;
+    max-width: 300px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.formulario input {
+    padding: 1em;
+    border: 0;
+    border-radius: 0.5em;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.formulario button {
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 0;
+    background-color: var(--azul-principal);
+    color: white;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background-color: #0a7f81;
+}
+
+.formulario span {
+    text-align: center;
+    text-decoration: underline;
+    color: var(--azul-principal);
+    cursor: pointer;
+}

@@ -1,0 +1,498 @@
+:root {
+  --azul-principal: #0a9396;
+  --cinza-claro: #f5f5f5;
+}
+
+.container {
+  min-height: 100vh;
+  background: #eef4f4;
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  color: var(--azul-principal);
+}
+
+.header p {
+  color: #666;
+}
+
+.calendario {
+  max-width: 1000px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1rem;
+}
+
+.dia {
+  background: white;
+  height: 100px;
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 1rem;
+  cursor: pointer;
+
+  transition: 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dia:hover {
+  transform: translateY(-3px);
+}
+
+.indicador {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--azul-principal);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 900;
+}
+
+/* MODAL PRINCIPAL */
+
+.modal {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  width: 420px;
+  height: 100vh;
+
+  background: white;
+  padding: 2rem;
+
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+
+  overflow-y: auto;
+
+  z-index: 1000;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.modalHeader h2 {
+  color: var(--azul-principal);
+}
+
+.modalHeader button {
+  width: 35px;
+  height: 35px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f0f0f0;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.modalHeader button:hover {
+  background: #dcdcdc;
+}
+
+/* CARDS DE TAREFA */
+
+.cardTarefa {
+  background: var(--cinza-claro);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardTarefa h3 {
+  color: var(--azul-principal);
+  margin-bottom: 0.3rem;
+}
+
+.badgeTipo {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: #d2e9ea;
+  color: #05595b;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.cardTarefa p {
+  color: #555;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.cardTarefa span {
+  display: block;
+  margin-top: 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.boxObservacao {
+  margin-top: 0.8rem;
+  padding: 0.6rem;
+  background: #fff;
+  border-left: 4px solid var(--azul-principal);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.acoes {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.acoes button {
+  flex: 1;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.acoes button:hover {
+  opacity: 0.9;
+}
+
+.acoes button:first-child {
+  background: #ffd54f;
+  color: #333;
+}
+
+.acoes button:last-child {
+  background: #ef5350;
+  color: white;
+}
+
+/* BOTÃO ADICIONAR TAREFA */
+
+.btnAdicionar {
+  width: 100%;
+  padding: 1rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background-color: var(--azul-principal);
+  color: white;
+
+  cursor: pointer;
+  margin-top: 1rem;
+
+  transition: 0.2s;
+}
+
+.btnAdicionar:hover {
+  background-color: #087b7e;
+}
+
+/* MENU ESCOLHA */
+
+.menuAdicionar {
+  position: fixed;
+
+  right: 440px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 250px;
+
+  background: white;
+
+  padding: 1.5rem;
+
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+  z-index: 1001;
+}
+
+.menuAdicionar h3 {
+  text-align: center;
+  color: var(--azul-principal);
+}
+
+.menuAdicionar button {
+  border: none;
+  border-radius: 10px;
+
+  padding: 1rem;
+
+  background: #eef4f4;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  transition: 0.2s;
+}
+
+.menuAdicionar button:hover {
+  background: var(--azul-principal);
+  color: white;
+}
+
+/* FORMULÁRIOS */
+
+.formularioAdicionar {
+  position: fixed;
+
+  right: 440px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 370px;
+  max-height: 85vh;
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.8rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+
+  z-index: 1002;
+}
+
+.formularioAdicionar h3 {
+  text-align: center;
+  color: var(--azul-principal);
+  margin-bottom: 0.5rem;
+}
+
+.formularioAdicionar label {
+  font-weight: 600;
+  color: #333;
+}
+
+.formularioAdicionar input,
+.formularioAdicionar select,
+.formularioAdicionar textarea {
+  width: 100%;
+
+  padding: 0.8rem;
+
+  border: 1px solid #d9d9d9;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  font-size: 0.95rem;
+}
+
+.formularioAdicionar input:focus,
+.formularioAdicionar select:focus,
+.formularioAdicionar textarea:focus {
+  border-color: var(--azul-principal);
+}
+
+.formularioAdicionar textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+.formularioAdicionar button {
+  border: none;
+
+  padding: 1rem;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.formularioAdicionar button[type="submit"] {
+  background: var(--azul-principal);
+  color: white;
+}
+
+.formularioAdicionar button[type="submit"]:hover {
+  background: #087b7e;
+}
+
+.btnVoltar {
+  background: #e5e5e5 !important;
+  color: #333 !important;
+}
+
+.btnVoltar:hover {
+  background: #d5d5d5 !important;
+}
+
+/* CONTAINER DOS BOTÕES DE FAMÍLIA (LADO A LADO) */
+
+.wrapperBotoesMembro {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.btnMembroPrincipal {
+  flex: 4;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.btnMembroPrincipal:hover {
+  background: #4338ca;
+}
+
+.btnMembroVisualizar {
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #4f46e5;
+  border-radius: 10px;
+  background: #f4f3ff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnMembroVisualizar:hover {
+  background: #e0e0ff;
+}
+
+/* CAIXA DE LISTAGEM DE MEMBROS CADASTRADOS */
+
+.listaMembrosCadastrados {
+  margin-top: 1rem;
+  border: 1px solid #e0e0ff;
+  border-radius: 10px;
+  background: #fbfbfe;
+  padding: 1rem;
+  max-height: 240px;
+  overflow-y: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.itemMembroLista {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.itemMembroLista:last-child {
+  border-bottom: none;
+}
+
+.infoMembro {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.acoesMembro {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.acoesMembro button {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.acoesMembro button:hover {
+  background: #f0f0f0;
+  border-color: #bbb;
+}
+
+.telMembro {
+  width: 100%;
+  margin: 0.2rem 0 0 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.labelParentesco {
+  color: #888;
+  font-style: italic;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1200px) {
+  .menuAdicionar,
+  .formularioAdicionar {
+    right: 430px;
+  }
+}
+
+@media (max-width: 900px) {
+  .modal {
+    width: 100%;
+  }
+
+  .menuAdicionar,
+  .formularioAdicionar {
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
+}
