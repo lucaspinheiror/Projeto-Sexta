@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from database import engine
 from app.db.base import Base
@@ -14,6 +15,14 @@ app = FastAPI(
     title="Minha API",
     description="API desenvolvida com FastAPI e SQLite",
     version="1.0.0"
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Registra os routers

@@ -2,58 +2,96 @@
     --azul-principal: #0a9396;
 }
 
+body {
+    background-color: #f4f7f8;
+}
+
 .container-formulario {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: whitesmoke;
-    /* border: 1px solid var(--azul-principal); */
-    padding: 1em;
+    background-color: white;
+    padding: 2em;
     border-radius: 1em;
     width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .container-formulario h1 {
-    margin: auto;
-    margin-bottom: 1em;
-    border-bottom: 2px solid lightgray;
-    padding-bottom: 0.5em;
-    color: var(--azul-principal);
     text-align: center;
-    max-width: 200px;
+    color: var(--azul-principal);
+    margin-bottom: 1.5em;
+    border-bottom: 2px solid #e5e5e5;
+    padding-bottom: 0.5em;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.2em;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 0.4em;
+    font-weight: 600;
+    color: #333;
 }
 
 .formulario input {
-    padding: 1em;
-    border: 0;
-    border-radius: 0.5em;
     width: 100%;
-    margin-top: 0.5em;
+    padding: 0.9em;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5em;
+    outline: none;
+    transition: 0.2s;
+    box-sizing: border-box;
+}
+
+.formulario input:focus {
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 5px rgba(10, 147, 150, 0.3);
 }
 
 .formulario button {
     padding: 1em;
+    border: none;
     border-radius: 0.5em;
-    border: 0;
     background-color: var(--azul-principal);
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .formulario button:hover {
-    background-color: #0a7f81;
+    background-color: #087f82;
+}
+
+.formulario button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 .formulario span {
     text-align: center;
-    text-decoration: underline;
     color: var(--azul-principal);
+    text-decoration: underline;
     cursor: pointer;
+    margin-top: 0.5em;
+}
+
+.formulario span:hover {
+    color: #087f82;
+}
+
+.erro {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 0.9rem;
 }

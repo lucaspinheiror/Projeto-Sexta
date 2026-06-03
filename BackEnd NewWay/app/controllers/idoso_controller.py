@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from database import get_db
 from app.db.models.idoso_model import Idoso
-from app.fastapi.schemas.idoso_schema import IdosoCreate, IdosoUpdate
+from app.fastapi.schemas.idoso_schema import IdosoCreate, IdosoUpdate, IdosoLogin
 from app.services.idoso_service import IdosoService
 
 
@@ -49,3 +49,21 @@ def editar_idoso(
 @router.delete("/deletar/{id}")
 def excluir_idoso(id: int, db: Session = Depends(get_db)):
     return IdosoService.deletar(db, id)
+
+@router.post("/login")
+def login_idoso(request: IdosoLogin, db: Session = Depends(get_db)):
+    idoso = IdosoService.login(db=db, request=request)
+
+    if not idoso:
+        raise HTTPException(status_code=401, detail="Nome ou senha inválidos")
+
+    return {"mensagem": "Login realizado com sucesso!", "id": idoso.id, "nome": idoso.nome}
+
+@router.get("/buscarnome")
+def buscar_idoso_por_nome(nome: str, db: Session = Depends(get_db)):
+    idoso = IdosoService.buscar_por_nome(db=db, nome=nome)
+
+    if not idoso:
+        raise HTTPException(status_code=404, detail="Idoso não encontrado")
+
+    return {"id": idoso.id, "nome": idoso.nome}

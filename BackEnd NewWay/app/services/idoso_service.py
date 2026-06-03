@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import select
 from app.db.models.idoso_model import Idoso
-from app.fastapi.schemas.idoso_schema import IdosoCreate, IdosoUpdate
+from app.fastapi.schemas.idoso_schema import IdosoCreate, IdosoUpdate, IdosoLogin
 
 class IdosoService:
     @staticmethod
@@ -50,3 +50,18 @@ class IdosoService:
 
         return f"idoso {id_idoso} excluido com sucesso!"
 
+    @staticmethod
+    def login(db: Session, request: IdosoLogin):
+        stmt = select(Idoso).where(Idoso.nome == request.nome)
+        idoso = db.scalars(stmt).first()
+
+        if not idoso or idoso.senha != request.senha:
+            return None
+
+        return idoso
+
+    @staticmethod
+    def buscar_por_nome(db: Session, nome: str):
+        stmt = select(Idoso).where(Idoso.nome == nome)
+        idoso = db.scalars(stmt).first()
+        return idoso

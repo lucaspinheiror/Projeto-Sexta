@@ -25,3 +25,7 @@ class IdosoRead(IdosoBase):
     id: int
 
     model_config = ConfigDict(from_attributes=True)
+
+class IdosoLogin(BaseModel):
+    nome: str
+    senha: str
