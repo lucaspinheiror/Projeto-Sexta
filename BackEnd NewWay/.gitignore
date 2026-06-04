@@ -1,0 +1,7 @@
+# Ignorar pastas __pycache__
+/__pycache__/
+
+# Ignorar arquivos compilados do Python
+*.pyc
+*.pyo
+*.pyd

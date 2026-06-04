@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.13.0 on win32)" generated="2026-06-04T13:37:24.986485" rpa="false" schemaversion="5">
+<suite id="s1" name="criarIdoso" source="C:\Users\Mateus\Desktop\teste\Projeto-Sexta\tests\criarIdoso.robot">
+<kw name="Abrir Navegador" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:25.313668" level="INFO">Opening browser 'chrome' to base url 'http://localhost:5173/'.</msg>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-04T13:37:25.313435" elapsed="1.551962"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-04T13:37:26.865605" elapsed="0.031557"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>15s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-06-04T13:37:26.897426" elapsed="0.001739"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:25.312850" elapsed="1.586486"/>
+</kw>
+<test id="s1-t1" name="CT01 - Cadastrar Idoso" line="12">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:26.900217" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T13:37:26.900032" elapsed="0.111288"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.011610" elapsed="0.010856"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nome-idoso</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.022710" elapsed="0.015197"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.038465" level="INFO">Typing text 'José da Silva' into text field 'id=nome-idoso'.</msg>
+<arg>id=nome-idoso</arg>
+<arg>José da Silva</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.038202" elapsed="0.101539"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.140384" level="INFO">Typing text '68' into text field 'id=idade-idoso'.</msg>
+<arg>id=idade-idoso</arg>
+<arg>68</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.140057" elapsed="0.071325"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.211884" level="INFO">Typing text '1.75' into text field 'id=altura-idoso'.</msg>
+<arg>id=altura-idoso</arg>
+<arg>1.75</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.211654" elapsed="0.076369"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.288518" level="INFO">Typing text '82.5' into text field 'id=peso-idoso'.</msg>
+<arg>id=peso-idoso</arg>
+<arg>82.5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.288280" elapsed="0.063483"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.352265" level="INFO">Typing text '12345678' into text field 'id=senha-idoso'.</msg>
+<arg>id=senha-idoso</arg>
+<arg>12345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.352032" elapsed="0.062793"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.467251" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT01_preenchido.png"&gt;&lt;img src="teste_sala/CT01_preenchido.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT01_preenchido.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.415100" elapsed="0.052288"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:27.467992" level="INFO">Clicking button 'xpath=//button[contains(.,'Cadastrar')]'.</msg>
+<arg>xpath=//button[contains(.,'Cadastrar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.467781" elapsed="0.054993"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-04T13:37:29.523908" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-04T13:37:27.523182" elapsed="2.000835"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.578946" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT01_resultado.png"&gt;&lt;img src="teste_sala/CT01_resultado.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT01_resultado.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.524276" elapsed="0.054764"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.579278" elapsed="0.005223"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:26.899471" elapsed="2.685454"/>
+</test>
+<test id="s1-t2" name="CT02 - Cadastrar Idoso" line="35">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.585961" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.585807" elapsed="0.057648"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.643714" elapsed="0.020756"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nome-idoso</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.664723" elapsed="0.010104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.675388" level="INFO">Typing text 'João Cleber' into text field 'id=nome-idoso'.</msg>
+<arg>id=nome-idoso</arg>
+<arg>João Cleber</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.675100" elapsed="0.096435"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.772128" level="INFO">Typing text '50' into text field 'id=idade-idoso'.</msg>
+<arg>id=idade-idoso</arg>
+<arg>50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.771869" elapsed="0.065810"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.838121" level="INFO">Typing text '1.75' into text field 'id=altura-idoso'.</msg>
+<arg>id=altura-idoso</arg>
+<arg>1.75</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.837908" elapsed="0.048779"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.887176" level="INFO">Typing text '82.5' into text field 'id=peso-idoso'.</msg>
+<arg>id=peso-idoso</arg>
+<arg>82.5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.886949" elapsed="0.069034"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:29.956556" level="INFO">Typing text '12345678' into text field 'id=senha-idoso'.</msg>
+<arg>id=senha-idoso</arg>
+<arg>12345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:29.956250" elapsed="0.063521"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:30.078029" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT02_preenchido.png"&gt;&lt;img src="teste_sala/CT02_preenchido.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT02_preenchido.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:30.020031" elapsed="0.058100"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:30.078654" level="INFO">Clicking button 'xpath=//button[contains(.,'Cadastrar')]'.</msg>
+<arg>xpath=//button[contains(.,'Cadastrar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:30.078443" elapsed="0.048844"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-04T13:37:32.128242" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-04T13:37:30.127572" elapsed="2.000790"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.203875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT02_resultado.png"&gt;&lt;img src="teste_sala/CT02_resultado.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT02_resultado.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.128618" elapsed="0.075347"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.204190" elapsed="0.004987"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:29.585447" elapsed="2.624015"/>
+</test>
+<test id="s1-t3" name="CT03 - Cadastrar Idoso" line="58">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.210553" level="INFO">Opening url 'http://localhost:5173/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.210390" elapsed="0.036640"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.247327" elapsed="0.005579"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=nome-idoso</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.253135" elapsed="0.009486"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.263088" level="INFO">Typing text 'Éder da Silva' into text field 'id=nome-idoso'.</msg>
+<arg>id=nome-idoso</arg>
+<arg>Éder da Silva</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.262863" elapsed="0.064261"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.327707" level="INFO">Typing text '90' into text field 'id=idade-idoso'.</msg>
+<arg>id=idade-idoso</arg>
+<arg>90</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.327433" elapsed="0.052196"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.380109" level="INFO">Typing text '2' into text field 'id=altura-idoso'.</msg>
+<arg>id=altura-idoso</arg>
+<arg>2</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.379885" elapsed="0.073495"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.453832" level="INFO">Typing text '82.5' into text field 'id=peso-idoso'.</msg>
+<arg>id=peso-idoso</arg>
+<arg>82.5</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.453614" elapsed="0.046851"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.500950" level="INFO">Typing text '123' into text field 'id=senha-idoso'.</msg>
+<arg>id=senha-idoso</arg>
+<arg>123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.500721" elapsed="0.063186"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.619336" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT03_preenchido.png"&gt;&lt;img src="teste_sala/CT03_preenchido.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT03_preenchido.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.564159" elapsed="0.055278"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:32.619932" level="INFO">Clicking button 'xpath=//button[contains(.,'Cadastrar')]'.</msg>
+<arg>xpath=//button[contains(.,'Cadastrar')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.619733" elapsed="0.066303"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-06-04T13:37:34.686671" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-06-04T13:37:32.686262" elapsed="2.000507"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-04T13:37:34.759559" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="teste_sala/CT03_resultado.png"&gt;&lt;img src="teste_sala/CT03_resultado.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>teste_sala/CT03_resultado.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-04T13:37:34.687006" elapsed="0.072652"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-04T13:37:34.759906" elapsed="0.004973"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:32.209994" elapsed="2.555099"/>
+</test>
+<kw name="Fechar Navegador" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-04T13:37:34.766193" elapsed="4.361763"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:34.765891" elapsed="4.362201"/>
+</kw>
+<status status="PASS" start="2026-06-04T13:37:24.988063" elapsed="14.140086"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="criarIdoso" id="s1" pass="3" fail="0" skip="0">criarIdoso</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
